@@ -5,7 +5,7 @@
     "build": "react-app-rewired build",
     "eject": "react-scripts eject",
     "lint": "eslint --ext js,jsx src config-overrides.js",
-    "start": "react-app-rewired start",
+    "start": "PORT=3001 react-app-rewired start",
     "test": "react-app-rewired test"
   },
   "browserslist": {
@@ -25,7 +25,7 @@
       "browser": true,
       "jest": true
     },
-    "parser": "@babel/eslint-parser",
+    "parser": "react-scripts/node_modules/babel-eslint",
     "parserOptions": {
       "babelOptions": {
         "presets": [
