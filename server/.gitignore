@@ -145,3 +145,5 @@ views/*
 !views/.gitkeep
 
 logs
+
+*.sqlite

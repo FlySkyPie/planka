@@ -4,19 +4,36 @@ const sharp = require('sharp');
 
 const getConfig = require('../../get-config');
 
+/**
+ * @param {Knex} knex
+ * @param {string} tableName
+ * @param {string} fieldName
+ * @param {string} prevFieldName
+ */
 const migrateImage = async (knex, tableName, fieldName, prevFieldName) => {
   await knex.schema.table(tableName, (table) => {
     /* Columns */
 
-    table.jsonb(fieldName);
+    // table.jsonb(fieldName);
+    table.json(fieldName);
   });
 
   await knex(tableName)
+    // .update({
+    //   [fieldName]: knex.raw('format(\'{"dirname":"%s","extension":"jpg"}\', ??)::jsonb', [
+    //     prevFieldName,
+    //   ]),
+    // })
+    /**
+     * Create a json and fill value with field, not sure does this work.
+     */
     .update({
-      [fieldName]: knex.raw('format(\'{"dirname":"%s","extension":"jpg"}\', ??)::jsonb', [
-        prevFieldName,
-      ]),
+      [fieldName]: JSON.stringify({
+        dirname: '??',
+        extension: 'jpg',
+      }),
     })
+    .jsonSet(fieldName, '$.dirname', knex.ref(prevFieldName))
     .whereNotNull(prevFieldName);
 
   await knex.schema.table(tableName, (table) => {

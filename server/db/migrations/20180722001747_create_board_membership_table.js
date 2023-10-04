@@ -2,7 +2,7 @@ module.exports.up = (knex) =>
   knex.schema.createTable('board_membership', (table) => {
     /* Columns */
 
-    table.bigInteger('id').primary().defaultTo(knex.raw('next_id()'));
+    table.bigInteger('id').primary();
 
     table.bigInteger('board_id').notNullable();
     table.bigInteger('user_id').notNullable();

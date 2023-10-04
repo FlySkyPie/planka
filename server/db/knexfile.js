@@ -17,10 +17,14 @@ function buildSSLConfig() {
 }
 
 module.exports = {
-  client: 'pg',
+  // client: 'pg',
+  // connection: {
+  //   connectionString: process.env.DATABASE_URL,
+  //   ssl: buildSSLConfig(),
+  // },
+  client: 'sqlite3', // or 'better-sqlite3'
   connection: {
-    connectionString: process.env.DATABASE_URL,
-    ssl: buildSSLConfig(),
+    filename: './mydb.sqlite',
   },
   migrations: {
     tableName: 'migration',

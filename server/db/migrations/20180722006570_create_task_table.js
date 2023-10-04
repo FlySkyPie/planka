@@ -2,7 +2,7 @@ module.exports.up = (knex) =>
   knex.schema.createTable('task', (table) => {
     /* Columns */
 
-    table.bigInteger('id').primary().defaultTo(knex.raw('next_id()'));
+    table.bigInteger('id').primary();
 
     table.bigInteger('card_id').notNullable();
 
