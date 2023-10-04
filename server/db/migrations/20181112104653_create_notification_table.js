@@ -2,7 +2,7 @@ module.exports.up = (knex) =>
   knex.schema.createTable('notification', (table) => {
     /* Columns */
 
-    table.bigInteger('id').primary();
+    table.increments('id').primary();
 
     table.bigInteger('user_id').notNullable();
     table.bigInteger('action_id').notNullable();

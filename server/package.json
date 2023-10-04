@@ -41,6 +41,7 @@
     "sails-hook-orm": "^4.0.2",
     "sails-hook-sockets": "^2.0.3",
     "sails-postgresql-redacted": "^1.0.2-9",
+    "sails-sqlite3": "^0.1.3",
     "sharp": "^0.31.2",
     "sqlite3": "^5.1.6",
     "stream-to-array": "^2.3.0",

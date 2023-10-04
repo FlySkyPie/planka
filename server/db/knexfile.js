@@ -24,7 +24,7 @@ module.exports = {
   // },
   client: 'sqlite3', // or 'better-sqlite3'
   connection: {
-    filename: './mydb.sqlite',
+    filename: path.resolve(__dirname, '../mydb.sqlite'),
   },
   migrations: {
     tableName: 'migration',

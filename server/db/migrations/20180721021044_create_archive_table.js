@@ -2,7 +2,7 @@ module.exports.up = (knex) =>
   knex.schema.createTable('archive', (table) => {
     /* Columns */
 
-    table.bigInteger('id').primary();
+    table.increments('id').primary();
 
     table.text('from_model').notNullable();
     table.bigInteger('original_record_id').notNullable();

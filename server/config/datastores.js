@@ -1,3 +1,4 @@
+const path = require('path');
 /**
  * Datastores
  * (sails.config.datastores)
@@ -47,5 +48,7 @@ module.exports.datastores = {
      */
     // adapter: 'sails-postgresql-redacted',
     // url: process.env.DATABASE_URL,
+    adapter: 'sails-sqlite3',
+    filename: path.resolve(__dirname, '../mydb.sqlite'),
   },
 };
