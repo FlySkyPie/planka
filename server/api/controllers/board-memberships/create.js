@@ -14,12 +14,12 @@ module.exports = {
   inputs: {
     boardId: {
       type: 'string',
-      regex: /^[0-9]+$/,
+      regex: /^[A-Za-z0-9_-]+$/,
       required: true,
     },
     userId: {
       type: 'string',
-      regex: /^[0-9]+$/,
+      regex: /^[A-Za-z0-9_-]+$/,
       required: true,
     },
     role: {

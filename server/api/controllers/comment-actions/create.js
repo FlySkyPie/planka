@@ -11,7 +11,7 @@ module.exports = {
   inputs: {
     cardId: {
       type: 'string',
-      regex: /^[0-9]+$/,
+      regex: /^[A-Za-z0-9_-]+$/,
       required: true,
     },
     text: {
