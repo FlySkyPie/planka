@@ -2,9 +2,9 @@ module.exports.up = (knex) =>
   knex.schema.createTable('session', (table) => {
     /* Columns */
 
-    table.increments('id').primary();
+    table.text('id').notNullable().primary();
 
-    table.bigInteger('user_id').notNullable();
+    table.text('user_id').notNullable();
 
     table.text('access_token').notNullable();
     table.text('remote_address').notNullable();

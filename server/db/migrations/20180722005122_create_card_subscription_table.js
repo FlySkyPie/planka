@@ -2,10 +2,10 @@ module.exports.up = (knex) =>
   knex.schema.createTable('card_subscription', (table) => {
     /* Columns */
 
-    table.increments('id').primary();
+    table.text('id').notNullable().primary();
 
     table.bigInteger('card_id').notNullable();
-    table.bigInteger('user_id').notNullable();
+    table.text('user_id').notNullable();
 
     table.boolean('is_permanent').notNullable();
 

@@ -2,7 +2,7 @@ module.exports.up = (knex) => {
   return knex.schema.createTable('user_account', (table) => {
     /* Columns */
 
-    table.increments('id').primary();
+    table.text('id').notNullable().primary();
 
     table.text('email').notNullable();
     table.text('password').notNullable();

@@ -4,6 +4,7 @@
  * @description :: A model definition represents a database table/collection.
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
  */
+const { nanoid } = require('nanoid');
 
 const BackgroundTypes = {
   GRADIENT: 'gradient',
@@ -76,6 +77,11 @@ module.exports = {
       collection: 'Board',
       via: 'projectId',
     },
+  },
+  beforeCreate(modelObj, cb) {
+    modelObj.id = nanoid();
+    // make your changes
+    return cb();
   },
 
   customToJSON() {

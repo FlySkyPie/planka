@@ -4,6 +4,7 @@
  * @description :: A model definition represents a database table/collection.
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
  */
+const { nanoid } = require('nanoid');
 
 module.exports = {
   attributes: {
@@ -37,5 +38,10 @@ module.exports = {
       collection: 'Card',
       via: 'listId',
     },
+  },
+  beforeCreate(modelObj, cb) {
+    modelObj.id = nanoid();
+    // make your changes
+    return cb();
   },
 };

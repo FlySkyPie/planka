@@ -32,6 +32,9 @@ dependencies:
   move-file:
     specifier: ^2.1.0
     version: 2.1.0
+  nanoid:
+    specifier: ^3.3.3
+    version: 3.3.3
   rimraf:
     specifier: ^3.0.2
     version: 3.0.2
@@ -3468,7 +3471,6 @@ packages:
     resolution: {integrity: sha512-p1sjXuopFs0xg+fPASzQ28agW1oHD7xDsd9Xkf3T15H3c/cifrFHVwrh74PdoklAPi+i7MdRsE47vm2r6JoB+w==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
-    dev: true
 
   /napi-build-utils@1.0.2:
     resolution: {integrity: sha512-ONmRUqK7zj7DWX0D9ADe03wbwOBZxNAfF20PlGfCWQcD3+/MakShIHrMqx9YwPTfxDdF1zLeL+RGZiR9kGMLdg==}

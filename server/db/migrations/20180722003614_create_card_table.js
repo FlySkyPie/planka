@@ -2,7 +2,7 @@ module.exports.up = (knex) =>
   knex.schema.createTable('card', async (table) => {
     /* Columns */
 
-    table.increments('id').primary();
+    table.text('id').notNullable().primary();
 
     table.bigInteger('board_id').notNullable();
     table.bigInteger('list_id');

@@ -4,6 +4,7 @@
  * @description :: A model definition represents a database table/collection.
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
  */
+const { nanoid } = require('nanoid');
 
 const COLORS = [
   'berry-red',
@@ -74,5 +75,10 @@ module.exports = {
       via: 'labelId',
       through: 'CardLabel',
     },
+  },
+  beforeCreate(modelObj, cb) {
+    modelObj.id = nanoid();
+    // make your changes
+    return cb();
   },
 };

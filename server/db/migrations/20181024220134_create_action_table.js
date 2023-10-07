@@ -2,10 +2,10 @@ module.exports.up = (knex) =>
   knex.schema.createTable('action', (table) => {
     /* Columns */
 
-    table.increments('id').primary();
+    table.text('id').notNullable().primary();
 
     table.bigInteger('card_id').notNullable();
-    table.bigInteger('user_id').notNullable();
+    table.text('user_id').notNullable();
 
     table.text('type').notNullable();
     table.jsonb('data').notNullable();

@@ -4,6 +4,7 @@
  * @description :: A model definition represents a database table/collection.
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
  */
+const { nanoid } = require('nanoid');
 
 const ImportTypes = {
   TRELLO: 'trello',
@@ -52,5 +53,10 @@ module.exports = {
       collection: 'Label',
       via: 'boardId',
     },
+  },
+  beforeCreate(modelObj, cb) {
+    modelObj.id = nanoid();
+    // make your changes
+    return cb();
   },
 };

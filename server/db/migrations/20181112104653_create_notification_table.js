@@ -2,9 +2,9 @@ module.exports.up = (knex) =>
   knex.schema.createTable('notification', (table) => {
     /* Columns */
 
-    table.increments('id').primary();
+    table.text('id').notNullable().primary();
 
-    table.bigInteger('user_id').notNullable();
+    table.text('user_id').notNullable();
     table.bigInteger('action_id').notNullable();
     table.bigInteger('card_id').notNullable();
 
